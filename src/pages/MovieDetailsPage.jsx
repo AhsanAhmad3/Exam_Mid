@@ -1,31 +1,27 @@
+// MovieDetailsPage.jsx
+import React from 'react';
 import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 
-const MovieDetailsPage = () => {
+const MovieDetailsPage = ({ movies }) => {
   const { id } = useParams();
-  const [movie, setMovie] = useState(null);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const fetchMovieDetails = async () => {
-      setLoading(true);
-      // Fetch movie details from API using ID
-      // Example API call: const response = await fetch(`https://api.example.com/movie/${id}`);
-      // const data = await response.json();
-      // setMovie(data);
-      setLoading(false);
-    };
-    fetchMovieDetails();
-  }, [id]);
-
-  if (loading) return <p>Loading...</p>;
-  if (!movie) return <p>Movie not found</p>;
+  const movie = movies.find((m) => m.id === parseInt(id));
 
   return (
-    <div>
-      <h1>{movie.title}</h1>
-      <p>{movie.description}</p>
-      {/* Display other movie details here */}
+    <div className="container">
+      {movie ? (
+        <>
+          <h1>{movie.title}</h1>
+          <p>Release Date: {movie.releaseDate}</p>
+          <p>Rating: {movie.rating}</p>
+          <img
+            src={`https://via.placeholder.com/300x450?text=${movie.title}`}
+            alt={movie.title}
+            style={{ borderRadius: '10px' }}
+          />
+        </>
+      ) : (
+        <p>Movie not found</p>
+      )}
     </div>
   );
 };

@@ -1,10 +1,8 @@
+// Footer.jsx
+import React from 'react';
+
 const Footer = () => {
-    return (
-      <footer>
-        <p>© 2024 MovieApp. All rights reserved.</p>
-      </footer>
-    );
-  };
-  
-  export default Footer;
-  
+  return <footer>&copy; 2024 Movie App</footer>;
+};
+
+export default Footer;

@@ -1,18 +1,12 @@
-import { useContext } from 'react';
+// FavoritesPage.jsx
+import React from 'react';
 import MovieList from '../components/MovieList';
-import { FavoritesContext } from '../context/FavoritesContext';
 
-const FavoritesPage = () => {
-  const { favorites } = useContext(FavoritesContext);
-
+const FavoritesPage = ({ favoriteMovies }) => {
   return (
-    <div>
+    <div className="container">
       <h1>Your Favorite Movies</h1>
-      {favorites.length ? (
-        <MovieList movies={favorites} />
-      ) : (
-        <p>No favorites added yet.</p>
-      )}
+      <MovieList movies={favoriteMovies} />
     </div>
   );
 };

@@ -1,32 +1,14 @@
-import { useState, useEffect } from 'react';
+// HomePage.jsx
+import React from 'react';
 import MovieList from '../components/MovieList';
 import SearchBar from '../components/SearchBar';
 
-const HomePage = () => {
-  const [movies, setMovies] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  const fetchMovies = async (query = '') => {
-    setLoading(true);
-    // Fetch movies from API here
-    // Example API call: const response = await fetch(`https://api.example.com/movies?search=${query}`);
-    // const data = await response.json();
-    // setMovies(data.results);
-    setLoading(false);
-  };
-
-  useEffect(() => {
-    fetchMovies(); // Fetch popular movies on initial load
-  }, []);
-
-  const handleSearch = (query) => {
-    fetchMovies(query);
-  };
-
+const HomePage = ({ movies, onSearch }) => {
   return (
-    <div>
-      <SearchBar onSearch={handleSearch} />
-      {loading ? <p>Loading...</p> : <MovieList movies={movies} />}
+    <div className="container">
+      <SearchBar onSearch={onSearch} />
+      <h1>Trending Movies</h1>
+      <MovieList movies={movies} />
     </div>
   );
 };

@@ -1,0 +1,91 @@
+/* movie.css */
+/* .movie-card {
+    background-color: white;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+  }
+  
+  .movie-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .movie-card h3 {
+    font-size: 20px;
+    margin: 10px 0;
+  } */
+  
+  .movie-card {
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .movie-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .movie-card h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+
+  .details-link {
+    background-color: #e74c3c;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .details-link:hover {
+    background-color: #c0392b;
+  }
+  
+
+  /* movie.css (add to existing styles) */
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+
+  /* movie.css (add to existing styles) */
+.search-bar {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .search-bar input {
+    width: 300px;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .search-bar button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .search-bar button:hover {
+    background-color: #2980b9;
+  }
+  
